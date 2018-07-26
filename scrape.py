@@ -5,40 +5,43 @@ from selenium import webdriver
 from datetime import datetime
 from contextlib import suppress
 
+year = [1960, 1961]
 
-# Initialize browser
+
+    # Initialize browser
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
     executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
 
+
 urlList = []
 
-# Initialize browser
+    # Initialize browser
 browser = init_browser()
 
 # Visit Costa Rica surf site
-url = "'https://www.billboard.com/archive/charts/{0}/hot-100".format(year)
+url = "https://www.billboard.com/archive/charts/2000/hot-100"
 browser.visit(url)
 
 # Scrape page into soup
 html = browser.html
 soup = BeautifulSoup(html, 'html.parser')
 
-# selenium
 
-#for i in td, tr, href, select that link then scrape that page and put name and artist into the list and then go back and do it again f
-#again for each issue of the year. then move to the next page and do it again. then we'll use the db to input info in the search function for bpm key length genre
+    # selenium
 
-# Find today's surf conditions
+    #for i in td, tr, href, select that link then scrape that page and put name and artist into the list and then go back and do it again f
+    #again for each issue of the year. then move to the next page and do it again. then we'll use the db to input info in the search function for bpm key length genre
+
+    # Find today's surf conditions
 
 table = soup.find('table', class_ = 'archive-table')
 url = table.find_all('a', href = True)         #, class_ = 'sl-spot-list__ref'
-for i in url:
-    urlList.append(i.text)
+urlList.append(url)
 
-print('dopeshit')
-print(name)
+print(urlList)
+
 
 # for i in spot_list:
 #     location.append(i.find("h3", class_ = "sl-spot-details__name").text)
