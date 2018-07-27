@@ -89,19 +89,31 @@ print(len(url))
 # j += 1
 #     print(j)
 
-# Module used to connect Python with MongoDb
-# import pymongo
-#
-# # The default port used by MongoDB is 27017
-# # https://docs.mongodb.com/manual/reference/default-mongodb-port/
-# conn = 'mongodb://localhost:27017'
-# client = pymongo.MongoClient(conn)
-#
-# # Define the 'classDB' database in Mongo
-# db = client.billboard
-#
-# for i in urlList:
-#     db.twothousdan.week1.insert_one(i)
+l = 0
+week = []
+    while l <= 52:
+        week.append(l)
+
+zip()
+
+
+#Module used to connect Python with MongoDb
+import pymongo
+
+# The default port used by MongoDB is 27017
+# https://docs.mongodb.com/manual/reference/default-mongodb-port/
+conn = 'mongodb://localhost:27017'
+client = pymongo.MongoClient(conn)
+
+
+
+# Define the 'classDB' database in Mongo
+db = client.billboard
+
+
+
+for i in urlList:
+    db.twothousdan.week1.insert_one(i)
 
 # Insert a document into the 'students' collection
 
